@@ -1,6 +1,6 @@
 class RewardsController < ApplicationController
   def new
-    @rewards = Reward.new
+    @reward = Reward.new
   end
 
   def create
