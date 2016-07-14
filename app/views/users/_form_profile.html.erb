@@ -1,0 +1,20 @@
+<h1>Create Your Profile</h1>
+
+<%= link_to %>
+
+<%= form_for @user do |f| %>
+  <div class="field">
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio%>
+    <%= f.text_field :bio%>
+  </div>
+
+  <%= f.submit %>
+  <ul>
+    <%= link_to user.id, user_path %>
+  </ul>
+<% end %>
