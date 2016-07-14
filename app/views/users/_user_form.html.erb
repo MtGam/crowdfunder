@@ -11,24 +11,28 @@
   <% end %>
 
   <div class="field">
-    First Name:<%= f.text_field :first_name %>
+    <p><%= f.label :first_name %></p>
+    <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    Last Name:<%= f.text_field :last_name %>
+    <p><%= f.label :last_name %></p>
+    <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    Email:<%= f.email_field :email %>
+    <p><%= f.label :email %></p>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    Password:<%= f.password_field :password %>
+    <p><%= f.label :password %></p>
+    <%= f.password_field :password %>
   </div>
 
   <div class="field">
-    Password Confirmation:
-    <% f.password_field :password_confirmation %>
+    <p><%= f.label :password_confirmation %></p>
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="submit">

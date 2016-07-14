@@ -5,13 +5,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end 
+  end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_url, notice: "Signed up!"
+      redirect_to root_url, notice: "Signed up!"
     else
       render :new, notice: "There was an error. Please try again."
     end
