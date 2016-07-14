@@ -4,10 +4,16 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @projects = Project.new
+    @project = Project.new
   end
 
   def create
-    @projects = Project.new(project_params)
+    @project = Project.new(project_params)
+
+    if @project.save
+      redirect_to projects_url
+    else
+      render :new
+    end
   end
 end
