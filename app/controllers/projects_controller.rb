@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    
   end
 
   def create
@@ -15,5 +16,10 @@ class ProjectsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+  def project_params
+    params.require(:project).permit(:name, :goal, :deadline, rewards_attributes: [:name, :description,])
   end
 end

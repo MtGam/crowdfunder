@@ -1,3 +1,55 @@
 <h1>New Project</h1>
 
-<%= render 'project_form' %>
+
+<%= form_for @project do |f| %>
+  <div class="field">
+    <%= f.label :name_of_project %>
+    <%= f.text_field :name %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name_of_user %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goal %>
+    <%= f.number_field :goal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deadline %>
+    <%= f.datetime_field :deadline %>
+  </div>
+  
+
+
+  <div class="field">
+    <h2>Reward</h2>
+
+    <%= f.fields_for :rewards do |rewards_fields| %>
+      <div class="field">
+        <%= rewards_fields.label :name %>
+        <%= rewards_fields.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= rewards_fields.label :description %>
+        <%= rewards_fields.text_field :description %>
+      </div>
+
+      <div class="field">
+        <%= rewards_fields.label :amount %>
+        <%= rewards_fields.number_field :amount %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
