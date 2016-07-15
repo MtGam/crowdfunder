@@ -31,6 +31,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def projects
+    @params = params
+  end
+
 
 private
 

@@ -3,13 +3,19 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def show
+    @project = Project.find(params[:id])
+
+  end
+
   def new
     @project = Project.new
-    
+
   end
 
   def create
     @project = Project.new(project_params)
+    @project.user = current_user #tied project to specific user
 
     if @project.save
       redirect_to projects_url

@@ -1,1 +1,9 @@
-<%= render 'project_form' %>
+<p><%= link_to "Home", root_path %></p>
+
+<h1><%="Welcome #{@user.first_name.titleize}"%></h1>
+
+<p><%= link_to "Edit Info", edit_user_path %></p>
+<p><%= link_to "My Projects", project_path %></p>
+
+
+<%= link_to "Logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete%>
